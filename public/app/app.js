@@ -15,7 +15,6 @@ Ext.require(
         'Ext.direct.*',
         'MyApp.lib.direct.ZendFrameworkProvider'
     ], function () {
-        console.log();
         Ext.direct.Manager.addProvider(
             //Ext.app.REMOTING_API
             {
