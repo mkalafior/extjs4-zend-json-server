@@ -12,7 +12,11 @@ Ext.define('MyApp.controller.Main', {
             'layout panel > grid' : {
                 'itemclick' : function (grid, record, el, index){
                     var form = Ext.ComponentQuery.query('form')[0];
-                    form.loadRecord(record);
+                    form.getForm().load({
+                        params : {
+                            id : record.get('id')
+                        }
+                    });
                 }
             }
         });

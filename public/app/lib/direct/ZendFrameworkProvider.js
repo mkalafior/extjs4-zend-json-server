@@ -32,9 +32,10 @@ Ext.define('MyApp.lib.direct.ZendFrameworkProvider', {
             if (actions[parts[0]][parts[1]] == undefined)
                 actions[parts[0]][parts[1]] = [];
             actions[parts[0]][parts[1]].push({
-                    name: parts[2],
-                    len: tmpActions[action].parameters.length
-                });
+                name: parts[2],
+                formHandler: tmpActions[action].formHandler,
+                len: tmpActions[action].parameters.length
+            });
         }
 
         for (modules in actions) {
@@ -49,6 +50,7 @@ Ext.define('MyApp.lib.direct.ZendFrameworkProvider', {
                 for (i = 0, len = methods.length; i < len; ++i) {
                     if (!Ext.isFunction(methods[i])) {
                         method = Ext.create('Ext.direct.RemotingMethod', methods[i]);
+                        console.log(methods[i], method);
                         cls[action][method.name] = this.createHandler(modules + '.' + action, method);
                     }
                 }

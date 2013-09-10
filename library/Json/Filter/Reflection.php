@@ -33,7 +33,6 @@ class Json_Filter_Reflection extends FilterIterator
 
         $contents = file_get_contents($file->getRealPath());
         $tokens = token_get_all($contents);
-
         $file->className = NULL;
         $file->classExtends = NULL;
         $file->classImplements = array();
@@ -47,7 +46,6 @@ class Json_Filter_Reflection extends FilterIterator
             }
 
             list($id, $content, $line) = $token;
-
             switch ($id) {
                 case T_ABSTRACT:
                 case T_CLASS:
