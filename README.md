@@ -1,6 +1,5 @@
 ##ExtDirectZend v0.9
-===================
-Simple demo application based on ExtJS4 and ZendFramework Json Server. Fully support all features of Ext.Direct.
+Simple demo application based on ExtJS4 and ZendFramework Json Server.
 
 The library supports all the features of Ext Direct:
   * Configuration with annotations
