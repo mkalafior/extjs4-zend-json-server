@@ -11,9 +11,9 @@ The library supports all the features of Ext Direct:
 
 ##Changelog
   0.9.0 - Support formHandler annotation for form submitting (example included)
+  1.0.0 - Support multipart form
 
 ##Roadmap
-  1.0.0 - Will support multipart form
 
 ##Minimal Requirements
   * ZendFramework 1.11.*
