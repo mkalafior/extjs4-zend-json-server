@@ -31,8 +31,15 @@ class Json_Server_Helper_Form
         );
         $controllerName = $include[0] . '_' . $include[1];
         $controller = new $controllerName;
-        $return = call_user_func_array(array($controller, $funcName), $args);
-        if ($return !== false) {
+        $result = call_user_func_array(array($controller, $funcName), $args);
+        if ($result !== false) {
+            $return = array(
+                'id' => (int)$this->getHttp()->getParam('extTID'),
+                'action' => $this->getHttp()->getParam('extAction'),
+                'method' => $this->getHttp()->getParam('extMethod'),
+                'type' => $this->getHttp()->getParam('extType'),
+                'result' => $result
+            );
             echo json_encode($return);
         } else {
             echo json_encode(array(
